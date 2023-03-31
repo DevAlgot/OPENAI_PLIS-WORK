@@ -5,7 +5,7 @@ import { Configuration, OpenAIApi } from "openai";
 
 dotenv.config();
 
-console.warn(process.env.API_KEY)
+console.log(process.env.API_KEY)
 
 const configuration = new Configuration({
     apiKey: process.env.API_KEY,
@@ -29,7 +29,7 @@ app.post('/', async (req, res) => {
 
         const response = await openai.createChatCompletion({
             model: 'gpt-3.5-turbo',
-            promt: `${promt}`
+            messages: `[{"role": "user", "content": "${promt}}]`
         });
 
         res.status(200).send({
