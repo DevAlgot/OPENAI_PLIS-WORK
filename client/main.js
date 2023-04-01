@@ -86,7 +86,7 @@ const handleSubmit = async (e) => {
     // messageDiv.innerHTML = "..."
     loader(messageDiv)
 
-    const response = await fetch('https://cpt-chat.onrender.com/', {
+    const response = await fetch('https://chat-cpt-for-skewl.onrender.com/', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
