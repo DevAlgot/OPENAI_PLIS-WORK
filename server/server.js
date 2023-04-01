@@ -31,7 +31,7 @@ app.post('/', async (req, res) => {
             model: 'gpt-3.5-turbo',
             messages: `[{"role": "user", "content": "${promt}}]`
         });
-
+        console.log(response.data.choices[0]);
         res.status(200).send({
             bot: response.data.choices[0].message.content
         })
@@ -40,5 +40,7 @@ app.post('/', async (req, res) => {
         res.status(500).send({ error });
     }
 });
+
+
 
 app.listen (5000, () => console.log('Server listening on port http://localhost:5000'));
